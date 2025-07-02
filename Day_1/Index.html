@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Create Professional Resumes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Resume Builder</h1>
-        <div class="builder">
-            <form id="resume-form">
-                <section>
-                    <h2>Personal Details</h2>
-                    <label for="profilePic">Upload Profile Picture</label>
-                    <input type="file" id="profilePic" name="profilePic" accept="image/*" />
-
-                    <label for="fullName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required />
-
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" id="middleName" name="middleName" required />
-
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" required />
-                </section>
-            </form>
-
+        <div class="header">
+            <h1>
+                <i class="fas fa-file-alt"></i> Resume Builder
+                <span class="sparkle-1">✨</span>
+                <span class="sparkle-2">⭐</span>
+                <span class="sparkle-3">💫</span>
+            </h1>
+            <p>Create a professional resume in minutes with our intuitive builder. Stand out from the crowd with a beautifully designed resume.</p>
         </div>
-    </div>
-</body>
-</html
+
+        <div class="main-content">
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-user"></i>
+                    Personal Information
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-row">
+                        <div>
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="john.doe@email.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
