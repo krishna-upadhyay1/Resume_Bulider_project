@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Create Professional Resumes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-file-alt"></i> Resume Builder
+                <span class="sparkle-1">✨</span>
+                <span class="sparkle-2">⭐</span>
+                <span class="sparkle-3">💫</span>
+            </h1>
+            <p>Create a professional resume in minutes with our intuitive builder. Stand out from the crowd with a beautifully designed resume.</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-user"></i>
+                    Personal Information
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-row">
+                        <div>
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="john.doe@email.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div>
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="New York, NY">
+                        </div>
+                    </div>
+                    <div class="form-row" style="margin-top: 15px;">
+                        <div>
+                            <label for="websiteLink">Website Link</label>
+                            <input type="text" id="websiteLink" placeholder="Enter multiple URLs separated by commas">
+                        </div>
+                        <div>
+                            <label for="portfolio">Portfolio/Website</label>
+                            <input type="url" id="portfolio" placeholder="johndoe.com">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="section-title">
+                    <i class="fas fa-bullseye"></i>
+                    Professional Summary
+                </div>
+
+                <div class="form-group">
+                    <label for="summary">Professional Summary</label>
+                    <textarea id="summary" placeholder="Write a brief summary of your professional background and career objectives..."></textarea>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Work Experience
+                </div>
+
+                <div id="experience-container">
+                    <div class="dynamic-section">
+                        <button type="button" class="btn btn-danger remove-btn" onclick="removeSection(this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div>
+                                    <label>Job Title</label>
+                                    <input type="text" class="job-title" placeholder="Software Engineer">
+                                </div>
+                                <div>
+                                    <label>Company</label>
+                                    <input type="text" class="company" placeholder="Tech Corp">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div>
+                                    <label>Start Date</label>
+                                    <input type="text" class="start-date" placeholder="Jan 2020">
+                                </div>
+                                <div>
+                                    <label>End Date</label>
+                                    <input type="text" class="end-date" placeholder="Present">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Job Description</label>
+                            <textarea class="job-description" placeholder="Describe your responsibilities and achievements..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-secondary add-more" onclick="addExperience()">
+                    <i class="fas fa-plus"></i> Add Work Experience
+                </button>
+
+                <hr class="section-divider">
+
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </div>
+
+                <div id="education-container">
+                    <div class="dynamic-section">
+                        <button type="button" class="btn btn-danger remove-btn" onclick="removeSection(this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div>
+                                    <label>Degree</label>
+                                    <input type="text" class="degree" placeholder="Bachelor of Science">
+                                </div>
+                                <div>
+                                    <label>Field of Study</label>
+                                    <input type="text" class="field" placeholder="Computer Science">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div>
+                                    <label>Institution</label>
+                                    <input type="text" class="institution" placeholder="University of Technology">
+                                </div>
+                                <div>
+                                    <label>Graduation Year</label>
+                                    <input type="text" class="grad-year" placeholder="2020">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>GPA (Optional)</label>
+                            <input type="text" class="gpa" placeholder="3.8/4.0">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-secondary add-more" onclick="addEducation()">
+                    <i class="fas fa-plus"></i> Add Education
+                </button>
+
+                <hr class="section-divider">
+
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    Skills
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills (comma-separated)</label>
+                    <textarea id="skills" placeholder="JavaScript, Python, React, Node.js, SQL, Git, Agile..."></textarea>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="section-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Projects
+                </div>
+
+                <div id="projects-container">
+                    <div class="dynamic-section">
+                        <button type="button" class="btn btn-danger remove-btn" onclick="removeSection(this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="form-group">
+                            <label>Project Name</label>
+                            <input type="text" class="project-name" placeholder="E-commerce Website">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Technologies Used</label>
+                            <input type="text" class="project-tech" placeholder="React, Node.js, MongoDB">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Description</label>
+                            <textarea class="project-description" placeholder="Describe your project and your role..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Link (Optional)</label>
+                            <input type="url" class="project-link" placeholder="https://github.com/username/project">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-secondary add-more" onclick="addProject()">
+                    <i class="fas fa-plus"></i> Add Project
+                </button>
+                <!-- Clear Button -->
+                <button type="button" class="btn btn-danger clear-btn" onclick="clearForm()" style="margin-top: 20px; width: 100%;">
+                    <i class="fas fa-eraser"></i> Clear All
+                </button>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <div class="section-title">
+                    <i class="fas fa-eye"></i>
+                    Resume Preview
+                </div>
+
+                <div class="resume-preview" id="resumePreview">
+                    <div class="resume-header">
+                        <div class="resume-name" id="previewName">Your Name</div>
+                        <div class="resume-contact" id="previewContact">
+                            Email • Phone • Location<br>
+                            Website • Portfolio
+                        </div>
+                    </div>
+
+                    <div class="resume-section" id="summarySection" style="display: none;">
+                        <div class="resume-section-title">Professional Summary</div>
+                        <div id="previewSummary"></div>
+                    </div>
+
+                    <div class="resume-section" id="experienceSection" style="display: none;">
+                        <div class="resume-section-title">Work Experience</div>
+                        <div id="previewExperience"></div>
+                    </div>
+
+                    <div class="resume-section" id="educationSection" style="display: none;">
+                        <div class="resume-section-title">Education</div>
+                        <div id="previewEducation"></div>
+                    </div>
+
+                    <div class="resume-section" id="skillsSection" style="display: none;">
+                        <div class="resume-section-title">Skills</div>
+                        <div class="skills-list" id="previewSkills"></div>
+                    </div>
+
+                    <div class="resume-section" id="projectsSection" style="display: none;">
+                        <div class="resume-section-title">Projects</div>
+                        <div id="previewProjects"></div>
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <button class="download-btn" onclick="downloadResume()" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download Resume as PDF
+                    </button>
+                    <div id="downloadStatus" style="margin-top: 10px; font-size: 14px; color: #667eea; display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Generating PDF...
+                    </div>
+                    
+                    <!-- Share Section -->
+                    <div class="share-section">
+                        <h4 style="margin: 30px 0 15px 0; color: #5a67d8; text-align: center;">
+                            <i class="fas fa-share-alt"></i> Share Your Resume
+                        </h4>
+                        
+                        <div class="share-buttons">
+                            <button class="share-btn email-btn" onclick="shareViaEmail()" title="Share via Email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </button>
+                            
+                            <button class="share-btn whatsapp-btn" onclick="shareViaWhatsApp()" title="Share via WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </button>
+                            
+                            <button class="share-btn linkedin-btn" onclick="shareViaLinkedIn()" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </button>
+                            
+                            <button class="share-btn twitter-btn" onclick="shareViaTwitter()" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </button>
+                            
+                            <button class="share-btn copy-btn" onclick="copyResumeLink()" title="Copy Link" id="copyBtn">
+                                <i class="fas fa-copy"></i>
+                                <span>Copy Link</span>
+                            </button>
+                            
+                            <button class="share-btn print-btn" onclick="printResume()" title="Print Resume">
+                                <i class="fas fa-print"></i>
+                                <span>Print</span>
+                            </button>
+                        </div>
+                        
+                        <div class="share-options">
+                            <button class="share-option-btn" onclick="generateShareableHTML()" id="htmlBtn">
+                                <i class="fas fa-code"></i> Generate Shareable HTML
+                            </button>
+                            
+                            <button class="share-option-btn" onclick="saveToLocalStorage()">
+                                <i class="fas fa-save"></i> Save Progress
+                            </button>
+                            
+                            <button class="share-option-btn" onclick="loadFromLocalStorage()">
+                                <i class="fas fa-upload"></i> Load Saved
+                            </button>
+                        </div>
+                        
+                        <div id="shareStatus" style="margin-top: 15px; padding: 10px; border-radius: 8px; display: none; text-align: center; font-size: 14px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
